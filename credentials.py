@@ -31,3 +31,15 @@ def password():
             cnt += 1
 
         return(pwd)
+
+def m_prof():
+    with open('m_professions.txt', 'r') as file:
+        output = file.read().split()
+
+        return(random.choice(output))
+    
+def f_prof():
+    with open('f_professions.txt', 'r') as file:
+        output = file.read().split()
+
+        return(random.choice(output))

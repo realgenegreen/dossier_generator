@@ -1,8 +1,12 @@
 import random
-from credentials import f_name, m_name, surname
+from credentials import f_name, m_name, surname, m_prof, f_prof
 
 def coin():
     coin = random.randint(0,1)
+    return (coin)
+
+def coin2():
+    coin = random.randint(0,3)
     return (coin)
 
 #GEN
@@ -19,15 +23,23 @@ true_driver = ''.join(random.choices(['A','B','C','D','E','F','G','H','J','I','K
 
 #DRIVER
 if not coin() == 1:
-    driver = 'none'
+    driver = 'None'
 else:
     driver = true_driver
 
+#OCCUPATION
+if not coin2() == 0:
+    occu = 'Unemployed'
+elif not coin() == 1:
+    occu = f_prof()
+else:
+    occu = m_prof()
 
 print('\n'+
     'Name:',name,surname(),'\n'+
     'ID:',id,'\n'+
     'Date of Birth:',date,'\n'+
     'Gender:',gen,'\n'+
-    'Driver License:',driver,'\n'
+    'Driver License:',driver,'\n'+
+    'Occupation:',occu,'\n'
     )
