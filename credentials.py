@@ -31,5 +31,3 @@ def password():
             cnt += 1
 
         return(pwd)
-
-print(surname)

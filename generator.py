@@ -1,19 +1,33 @@
 import random
-from credentials import f_name, m_name, surname, password
+from credentials import f_name, m_name, surname
 
-n1 = f_name
-n2 = m_name
-name = ''
-coin = random.randint(0,1)
+def coin():
+    coin = random.randint(0,1)
+    return (coin)
 
-if not coin == 1:
-    name = f_name
+#GEN
+if not coin() == 1:
+    name = f_name()
+    gen = 'female'
 else:
-    name = m_name
+    name = m_name()
+    gen = 'male'
 
-print(f_name)
+id = random.randrange(0000000,99999999,1)
+date = str(random.randrange(1,30,1))+' '+str(random.choice(['jan', 'feb', 'mar', 'apr', 'may', 'jun', 'jul', 'aug', 'sep', 'oct', 'nov', 'dec']))+' '+str(random.randrange(1955,1999,1))
+true_driver = ''.join(random.choices(['A','B','C','D','E','F','G','H','J','I','K','L','M','N','O','P','R','S','T','Q','U','V','W','X','Y','Z'],k=2))+' '+str(random.randrange(00000,99999,1))+' '+str(random.choice(['A','B','C','D']))
 
-# print(
-#     'Name:',f_name,'\t'+
-#     'Surname:',surname,'\t'
-#     )
+#DRIVER
+if not coin() == 1:
+    driver = 'none'
+else:
+    driver = true_driver
+
+
+print('\n'+
+    'Name:',name,surname(),'\n'+
+    'ID:',id,'\n'+
+    'Date of Birth:',date,'\n'+
+    'Gender:',gen,'\n'+
+    'Driver License:',driver,'\n'
+    )
