@@ -59,7 +59,6 @@ else:
 
 #TOWN
 birthtown = towns()
-town = ''
 if coin() == 0:
     town = towns()
 else:
