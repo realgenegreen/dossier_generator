@@ -12,9 +12,13 @@ Mines
 Lake 
 Lakes 
 Peak 
+Peaks
 Fort 
 Oak
 Ash
+Cedar
+Alder
+Birch
 Maple
 Apple
 Pine 
@@ -46,3 +50,6 @@ White
 Brown
 Cold
 Side
+Church
+Ridge
+Meadow

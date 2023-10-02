@@ -11,7 +11,7 @@ def coin2():
     return (coin)
 
 def badrate():
-    rate = random.randint(0,25)
+    rate = random.randint(0,15)
     return (rate)
 
 #GEN
@@ -70,7 +70,7 @@ print('\n'+
     'ID:',id,'\n'+
     'Date of Birth:',date,'\n'+
     'Birthplace:',birthtown,'\n'+
-    'Location Address:',address(),town,'\n'+
+    'Location Address:',address(town),'\n'+
     'Driver License:',driver,'\n'+
     'Occupation:',occu,'\n'+
     'Social Rating:',socr,rcom,'\n'

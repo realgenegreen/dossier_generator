@@ -37,10 +37,25 @@ def towns():
 
             return (root()+' '+pfix)
 
-def address():
-    with open('data/streets.txt', 'r') as file:
+def street():
+    if _coin() == 0:
+        st_name = root()
+    else:
+        with open('data/st_rtwd.txt', 'r') as file:
             output = file.read().split()
+            st_name = (random.choice(output))
 
-            st = (random.choice(output))
+    if not _coin2() == 0:
+        type_list = ['Ave', 'Blwd', 'Dr', 'Rd', 'St']
+        st_type = (random.choice(type_list))
+    else:
+        type_list = ['Cir', 'Ct', 'Ln', 'Pkwy', 'Pl', 'Hwy', 'Fwy', 'Bldg']
+        st_type = (random.choice(type_list))
 
-            return (str(random.randrange(1,700,1))+' '+root()+' '+st+', '+str(random.randrange(00000,99999,1)))
+    return (st_name+' '+st_type)
+
+def address(twn):
+
+    return (str(random.randrange(1,700,1))+' '+street()+', '+twn+' '+str(random.randrange(00000,99999,1)))
+    # return (str(random.randrange(1,700,1))+' '+root()+' '+st+', '+twn+' '+str(random.randrange(00000,99999,1)))
+
