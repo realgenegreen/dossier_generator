@@ -1,0 +1,13 @@
+Ave 
+Blwd 
+Cir 
+Ct 
+Ln 
+Dr 
+Pkwy 
+Pl 
+Rd 
+St 
+Hwy 
+Fwy 
+Bldg

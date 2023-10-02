@@ -1,45 +1,45 @@
 import random
 
 def m_name():
-    with open('m_names.txt', 'r') as mfile:
-        output1 = mfile.read().split()
+    with open('data/m_names.txt', 'r') as file:
+        output = file.read().split()
 
-        return(random.choice(output1))
+        return(random.choice(output))
     
 def f_name():
-    with open('f_names.txt', 'r') as ffile:
-        output1 = ffile.read().split()
+    with open('data/f_names.txt', 'r') as file:
+        output = file.read().split()
 
-        return(random.choice(output1))
+        return(random.choice(output))
     
 def surname():
-    with open ('surnames.txt', 'r') as sfile:
-        output2 = sfile.read().split()
+    with open ('data/surnames.txt', 'r') as file:
+        output = file.read().split()
 
-        return(random.choice(output2))
+        return(random.choice(output))
 
 def password():
-    with open ('pwdsym.txt', 'r') as pfile:
-        output3 = pfile.read().split()
+    with open ('data/pwdsym.txt', 'r') as file:
+        output = file.read().split()
 
         pwd =''
         cnt = 0
-        for sym in output3:
+        for sym in output:
             if cnt >= 8:
                 break
-            pwd += random.choice(output3)
+            pwd += random.choice(output)
             cnt += 1
 
         return(pwd)
 
 def m_prof():
-    with open('m_professions.txt', 'r') as file:
+    with open('data/m_professions.txt', 'r') as file:
         output = file.read().split()
 
         return(random.choice(output))
     
 def f_prof():
-    with open('f_professions.txt', 'r') as file:
+    with open('data/f_professions.txt', 'r') as file:
         output = file.read().split()
 
         return(random.choice(output))
