@@ -47,3 +47,5 @@ Green
 Bay
 Bank
 Wood
+Cliff
+Horse

@@ -1,3 +1,9 @@
+#
+# CREATED BY GENE GREEN (c)
+# 2023
+# realgenegreen@gmail.com
+#
+
 import random
 
 def m_name():

@@ -53,3 +53,5 @@ Side
 Church
 Ridge
 Meadow
+Cliff
+Horse

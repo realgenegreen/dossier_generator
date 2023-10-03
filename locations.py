@@ -1,8 +1,18 @@
+#
+# CREATED BY GENE GREEN (c)
+# 2023
+# realgenegreen@gmail.com
+#
+
 import random
 from credentials import surname
 
 def _coin():
     coin = random.randint(0,1)
+    return (coin)
+
+def _coin1():
+    coin = random.randint(0,2)
     return (coin)
 
 def _coin2():
@@ -56,6 +66,43 @@ def street():
 
 def address(twn):
 
-    return (str(random.randrange(1,700,1))+' '+street()+', '+twn+' '+str(random.randrange(00000,99999,1)))
-    # return (str(random.randrange(1,700,1))+' '+root()+' '+st+', '+twn+' '+str(random.randrange(00000,99999,1)))
+    return (str(random.randrange(1,700,1))+' '+street()+', '+twn+' '+str(random.randrange(10000,99999,1)))
 
+def education():
+
+    if _coin() == 0:
+        mid_univ = ''
+    else:
+        mid_univ = (random.choice(['State ', 'Central ', 'Technical ', 'Research ']))
+
+    def _naming():
+        if _coin() == 0:
+            naming = towns()
+        else:
+            naming = surname()
+        return(naming)
+
+    if _coin1() == 0:
+        int_univ = f'{_naming()} '
+        end1_univ = ''
+    elif _coin1() == 1:
+        int_univ = ''
+        end1_univ = f'of {_naming()}'
+    else:
+        int_univ = f'{_naming()} '
+        end1_univ = f'of {_naming()}'
+
+    if not end1_univ == '' and _coin() == 0:
+        end_univ = str('of '+(random.choice(['Health ', 'Technology ', 'Art ', 'Arts ', 'Justice ', 'Medicine ', 'Science ', 'Culture '])))
+    else:
+        end_univ = end1_univ
+
+    if not _coin2() == 0:
+        univ = (random.choice(['University', 'Institute', 'College', 'Academy']))
+    else:
+        univ = None
+    
+    if univ == None:
+        return (None)
+    else:
+        return f'{int_univ}{mid_univ}{univ} {end_univ}'

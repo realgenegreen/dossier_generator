@@ -1,6 +1,12 @@
+#
+# CREATED BY GENE GREEN (c)
+# 2023
+# realgenegreen@gmail.com
+#
+
 import random
 from credentials import f_name, m_name, surname, m_prof, f_prof
-from locations import towns, address
+from locations import towns, address, education
 
 def coin():
     coin = random.randint(0,1)
@@ -41,11 +47,16 @@ else:
     occu = m_prof()
 
 #SOCIAL
-if occu == 'Unemployed':
+edu = education()
+
+if edu == None:
+    occu = (random.choice(['Attendant', 'Dustman', 'Barber', 'Driver', 'Unemployed','Unemployed','Unemployed']))
+    
+if occu == 'Unemployed' or edu == None:
     rmin = 20
-    rmax = 50
+    rmax = 45
 else:
-    rmin = 50
+    rmin = 45
     rmax = 100
 
 socr = random.randint(rmin,rmax)
@@ -64,6 +75,7 @@ if coin() == 0:
 else:
     town = birthtown
 
+#==============PRINT BLOCK================
 print('\n'+
     'Name:',name,surname(),'\n'+
     'Gender:',gen,'\n'+
@@ -73,5 +85,6 @@ print('\n'+
     'Location Address:',address(town),'\n'+
     'Driver License:',driver,'\n'+
     'Occupation:',occu,'\n'+
+    'Education:',edu,'\n'+
     'Social Rating:',socr,rcom,'\n'
     )
