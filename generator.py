@@ -9,16 +9,16 @@ from credentials import f_name, m_name, surname, m_prof, f_prof
 from locations import towns, address, education
 
 def coin():
-    coin = random.randint(0,1)
-    return (coin)
+    coin_v = random.randint(0,1)
+    return coin_v
 
-def coin2():
-    coin = random.randint(0,3)
-    return (coin)
+def dice():
+    dice_v = random.randint(0,3)
+    return dice_v
 
 def badrate():
     rate = random.randint(0,15)
-    return (rate)
+    return rate
 
 #GEN
 if not coin() == 1:
@@ -28,18 +28,18 @@ else:
     name = m_name()
     gen = 'Male'
 
-id = random.randrange(0000000,99999999,1)
+pid = random.randrange(0000000,99999999,1)
 date = str(random.randrange(1,30,1))+' '+str(random.choice(['jan', 'feb', 'mar', 'apr', 'may', 'jun', 'jul', 'aug', 'sep', 'oct', 'nov', 'dec']))+' '+str(random.randrange(1955,1999,1))
 true_driver = ''.join(random.choices(['A','B','C','D','E','F','G','H','J','I','K','L','M','N','O','P','R','S','T','Q','U','V','W','X','Y','Z'],k=2))+' '+str(random.randrange(00000,99999,1))+' '+str(random.choice(['A','B','C','D']))
 
 #DRIVER
-if not coin() == 1:
+if dice() == 0:
     driver = None
 else:
     driver = true_driver
 
 #OCCUPATION
-if coin2() == 0:
+if dice() == 0:
     occu = 'Unemployed'
 elif not gen == 'Male':
     occu = f_prof()
@@ -49,11 +49,16 @@ else:
 #SOCIAL
 edu = education()
 
-if edu == None:
-    occu = (random.choice(['Attendant', 'Dustman', 'Barber', 'Driver', 'Unemployed','Unemployed','Unemployed']))
-    
-if occu == 'Unemployed' or edu == None:
-    rmin = 20
+if edu is None:
+    occu = (random.choice([
+            'Attendant', 'Dustman', 'Barber', 'Driver', 
+            'Unemployed','Unemployed','Unemployed']))
+
+if occu == 'Unemployed' and edu is None:
+    rmin = 15
+    rmax = 30
+elif occu == 'Unemployed' or edu is None:
+    rmin = 25
     rmax = 45
 else:
     rmin = 45
@@ -79,7 +84,7 @@ else:
 print('\n'+
     'Name:',name,surname(),'\n'+
     'Gender:',gen,'\n'+
-    'ID:',id,'\n'+
+    'ID:',pid,'\n'+
     'Date of Birth:',date,'\n'+
     'Birthplace:',birthtown,'\n'+
     'Location Address:',address(town),'\n'+

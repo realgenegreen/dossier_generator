@@ -10,19 +10,19 @@ def m_name():
     with open('data/m_names.txt', 'r') as file:
         output = file.read().split()
 
-        return(random.choice(output))
-    
+        return random.choice(output)
+
 def f_name():
     with open('data/f_names.txt', 'r') as file:
         output = file.read().split()
 
-        return(random.choice(output))
-    
+        return random.choice(output)
+
 def surname():
     with open ('data/surnames.txt', 'r') as file:
         output = file.read().split()
 
-        return(random.choice(output))
+        return random.choice(output)
 
 def password():
     with open ('data/pwdsym.txt', 'r') as file:
@@ -36,16 +36,16 @@ def password():
             pwd += random.choice(output)
             cnt += 1
 
-        return(pwd)
+        return pwd
 
 def m_prof():
     with open('data/m_professions.txt', 'r') as file:
         output = file.read().split()
 
-        return(random.choice(output))
-    
+        return random.choice(output)
+
 def f_prof():
     with open('data/f_professions.txt', 'r') as file:
         output = file.read().split()
 
-        return(random.choice(output))
+        return random.choice(output)
