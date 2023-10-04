@@ -48,12 +48,19 @@ def towns():
             return (root()+' '+pfix)
 
 def street():
-    if _coin() == 0:
-        st_name = root()
-    else:
-        with open('data/st_rtwd.txt', 'r') as file:
-            output = file.read().split()
-            st_name = (random.choice(output))
+
+    def _st_num():
+        num = str(random.randrange(1, 200, 1))
+        ind = num[-1]
+        if ind == '1':
+            pfx = 'st'
+        elif ind == '2':
+            pfx = 'nd'
+        elif ind == '3':
+            pfx = 'rd'
+        else:
+            pfx = 'th'
+        return str(num+pfx)
 
     if not _coin2() == 0:
         type_list = ['Ave', 'Blwd', 'Dr', 'Rd', 'St']
@@ -61,6 +68,15 @@ def street():
     else:
         type_list = ['Cir', 'Ct', 'Ln', 'Pkwy', 'Pl', 'Hwy', 'Fwy', 'Bldg']
         st_type = (random.choice(type_list))
+
+    if _coin() == 0:
+        st_name = root()
+    if st_type in ['Ave', 'St'] and _coin() == 1:
+        st_name = _st_num()
+    else:
+        with open('data/st_rtwd.txt', 'r') as file:
+            output = file.read().split()
+            st_name = (random.choice(output))
 
     return (st_name+' '+st_type)
 
