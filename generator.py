@@ -1,8 +1,11 @@
-#
-# CREATED BY GENE GREEN (c)
-# 2023
-# realgenegreen@gmail.com
-#
+'''
+This is a simple program that generates dossier of non-existent peoples.
+This file is main part of it.
+
+CREATED BY GENE GREEN (c)
+2023
+realgenegreen@gmail.com
+'''
 
 import random
 from credentials import f_name, m_name, surname, m_prof, f_prof

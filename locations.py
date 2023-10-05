@@ -1,8 +1,11 @@
-#
-# CREATED BY GENE GREEN (c)
-# 2023
-# realgenegreen@gmail.com
-#
+'''
+This module is a collection of methods 
+for generating non-existent geographic locations.
+
+CREATED BY GENE GREEN (c)
+2023
+realgenegreen@gmail.com
+'''
 
 import random
 from credentials import surname
