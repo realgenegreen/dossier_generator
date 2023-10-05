@@ -38,9 +38,8 @@ else:
 edu = education()
 
 if edu is None:
-    occu = (random.choice([
-            'Attendant', 'Dustman', 'Barber', 'Driver', 
-            'Unemployed','Unemployed','Unemployed']))
+    occu = (random.choice(['Attendant', 'Dustman', 'Barber', 'Driver',
+                           'Unemployed','Unemployed','Unemployed']))
 
 if occu == 'Unemployed' and edu is None:
     rmin = 15

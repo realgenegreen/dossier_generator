@@ -22,7 +22,7 @@ def surname():
     return random.choice(SURNAMES.split())
 
 def m_prof():
-    '''Professions common among mens'''
+    '''Professions common among men'''
     return random.choice(M_PROFESSIONS.split())
 
 def f_prof():
