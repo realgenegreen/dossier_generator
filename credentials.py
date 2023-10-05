@@ -1,51 +1,30 @@
-#
-# CREATED BY GENE GREEN (c)
-# 2023
-# realgenegreen@gmail.com
-#
+'''
+This module is a collection of methods 
+for generating data of non-existent persons.
 
+CREATED BY GENE GREEN (c)
+2023
+realgenegreen@gmail.com
+'''
 import random
+from data import M_NAMES, F_NAMES, SURNAMES, M_PROFESSIONS, F_PROFESSIONS
 
 def m_name():
-    with open('data/m_names.txt', 'r') as file:
-        output = file.read().split()
-
-        return random.choice(output)
+    '''Male names'''
+    return random.choice(M_NAMES.split())
 
 def f_name():
-    with open('data/f_names.txt', 'r') as file:
-        output = file.read().split()
-
-        return random.choice(output)
+    '''Female names'''
+    return random.choice(F_NAMES.split())
 
 def surname():
-    with open ('data/surnames.txt', 'r') as file:
-        output = file.read().split()
-
-        return random.choice(output)
-
-def password():
-    with open ('data/pwdsym.txt', 'r') as file:
-        output = file.read().split()
-
-        pwd =''
-        cnt = 0
-        for sym in output:
-            if cnt >= 8:
-                break
-            pwd += random.choice(output)
-            cnt += 1
-
-        return pwd
+    '''Surnames'''
+    return random.choice(SURNAMES.split())
 
 def m_prof():
-    with open('data/m_professions.txt', 'r') as file:
-        output = file.read().split()
-
-        return random.choice(output)
+    '''Professions common among mens'''
+    return random.choice(M_PROFESSIONS.split())
 
 def f_prof():
-    with open('data/f_professions.txt', 'r') as file:
-        output = file.read().split()
-
-        return random.choice(output)
+    '''Professions common among women'''
+    return random.choice(F_PROFESSIONS.split())

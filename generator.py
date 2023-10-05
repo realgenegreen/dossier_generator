@@ -1,24 +1,28 @@
-#
-# CREATED BY GENE GREEN (c)
-# 2023
-# realgenegreen@gmail.com
-#
+'''
+This is a simple program that generates dossier of non-existent peoples.
+This file is main part of it.
+
+CREATED BY GENE GREEN (c)
+2023
+realgenegreen@gmail.com
+'''
 
 import random
 from credentials import f_name, m_name, surname, m_prof, f_prof
 from locations import towns, address, education
+from . import coin, dice
 
-def coin():
-    coin_v = random.randint(0,1)
-    return coin_v
+# def coin():
+#     coin_v = random.randint(0,1)
+#     return coin_v
 
-def dice():
-    dice_v = random.randint(0,3)
-    return dice_v
+# def dice():
+#     dice_v = random.randint(0,3)
+#     return dice_v
 
-def badrate():
-    rate = random.randint(0,15)
-    return rate
+# def badrate():
+#     rate = random.randint(0,15)
+#     return rate
 
 #GEN
 if not coin() == 1:
@@ -32,12 +36,6 @@ pid = random.randrange(0000000,99999999,1)
 date = str(random.randrange(1,30,1))+' '+str(random.choice(['jan', 'feb', 'mar', 'apr', 'may', 'jun', 'jul', 'aug', 'sep', 'oct', 'nov', 'dec']))+' '+str(random.randrange(1955,1999,1))
 true_driver = ''.join(random.choices(['A','B','C','D','E','F','G','H','J','I','K','L','M','N','O','P','R','S','T','Q','U','V','W','X','Y','Z'],k=2))+' '+str(random.randrange(00000,99999,1))+' '+str(random.choice(['A','B','C','D']))
 
-#DRIVER
-if dice() == 0:
-    driver = None
-else:
-    driver = true_driver
-
 #OCCUPATION
 if dice() == 0:
     occu = 'Unemployed'
@@ -45,6 +43,12 @@ elif not gen == 'Male':
     occu = f_prof()
 else:
     occu = m_prof()
+
+#DRIVER
+if dice() != 0 or occu == 'Driver':
+    driver = true_driver
+else:
+    driver = None
 
 #SOCIAL
 edu = education()
