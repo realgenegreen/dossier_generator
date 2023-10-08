@@ -1,3 +1,8 @@
+'''
+Collection of words for street naming
+'''
+
+ST_RTWDS = '''
 Butcher
 Merchant
 Baker
@@ -49,3 +54,4 @@ Bank
 Wood
 Cliff
 Horse
+'''

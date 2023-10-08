@@ -8,50 +8,25 @@ realgenegreen@gmail.com
 '''
 
 import random
-from credentials import surname
+from data import SURNAMES, TOWN_RTWD, TOWN_DBLW, TOWN_PFIX, ST_RTWDS
+from __init__ import _coin, _dice
 
-def _coin():
-    coin = random.randint(0,1)
-    return coin
-
-def _coin1():
-    coin = random.randint(0,2)
-    return coin
-
-def _coin2():
-    coin = random.randint(0,3)
-    return coin
-
-def root():
+def _root():
     if _coin() == 0:
-        with open('data/surnames.txt', 'r') as sfile:
-            output1 = sfile.read().split()
-
-            return random.choice(output1)
-    else:
-        with open('data/town_rtwd.txt', 'r') as tfile:
-            output2 = tfile.read().split()
-
-            return random.choice(output2)
+        return random.choice(SURNAMES.split())
+    return random.choice(TOWN_RTWD.split())
 
 def towns():
+    '''Town name generator'''
     if _coin() == 0:
-        with open('data/town_pfix.txt', 'r') as pfile:
-            output1 = pfile.read().split()
-
-            pfix = random.choice(output1)
-
-            return root()+pfix
+        pfix = random.choice(TOWN_PFIX.split())
+        return _root()+pfix
     else:
-        with open('data/town_dblw.txt', 'r') as dfile:
-            output2 = dfile.read().split()
-
-            pfix = random.choice(output2)
-
-            return root()+' '+pfix
+        pfix = random.choice(TOWN_DBLW.split())
+        return _root()+' '+pfix
 
 def street():
-
+    '''Street name generator'''
     def _st_num():
         num = str(random.randrange(1, 200, 1))
         ind = num[-1]
@@ -65,7 +40,7 @@ def street():
             pfx = 'th'
         return str(num+pfx)
 
-    if not _coin2() == 0:
+    if not _dice() == 0:
         type_list = ['Ave', 'Blwd', 'Dr', 'Rd', 'St']
         st_type = random.choice(type_list)
     else:
@@ -73,22 +48,21 @@ def street():
         st_type = random.choice(type_list)
 
     if _coin() == 0:
-        st_name = root()
+        st_name = _root()
     if st_type in ['Ave', 'St'] and _coin() == 1:
         st_name = _st_num()
     else:
-        with open('data/st_rtwd.txt', 'r') as file:
-            output = file.read().split()
-            st_name = random.choice(output)
-
+        st_name = random.choice(ST_RTWDS.split())
     return st_name+' '+st_type
 
 def address(twn):
-
-    return (str(random.randrange(1,700,1))+' '+street()+', '+twn+' '+str(random.randrange(10000,99999,1)))
+    '''Address string generator'''
+    num_1 = random.randrange(1,700,1)
+    num_2 = random.randrange(10000,99999,1)
+    return f'{num_1} {street()}, {twn} {num_2}'
 
 def education():
-
+    '''Education info generator'''
     if _coin() == 0:
         mid_univ = ''
     else:
@@ -98,30 +72,32 @@ def education():
         if _coin() == 0:
             naming = towns()
         else:
-            naming = surname()
+            naming = random.choice(SURNAMES.split())
         return naming
 
-    if _coin1() == 0:
+    if _dice() == 0:
         int_univ = f'{_naming()} '
-        end1_univ = ''
-    elif _coin1() == 1:
+        end1_univ = f'of {_naming()}'
+    elif _dice() == 1:
         int_univ = ''
         end1_univ = f'of {_naming()}'
     else:
         int_univ = f'{_naming()} '
-        end1_univ = f'of {_naming()}'
+        end1_univ = ''
 
     if end1_univ != '' and _coin() == 0:
-        end_univ = str('of '+(random.choice(['Health ', 'Technology ', 'Art ', 'Arts ', 'Justice ', 'Medicine ', 'Science ', 'Culture '])))
+        end_univ = str('of '+(random.choice(['Health ', 'Technology ', 'Art ',
+                                             'Arts ', 'Justice ', 'Medicine ', 
+                                             'Science ', 'Culture '])))
     else:
         end_univ = end1_univ
 
-    if not _coin2() == 0:
+    if not _dice() == 0:
         univ = random.choice(['University', 'Institute', 'College', 'Academy'])
     else:
         univ = None
 
     if univ is None:
         return None
-    
+
     return f'{int_univ}{mid_univ}{univ} {end_univ}'

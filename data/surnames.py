@@ -1,3 +1,8 @@
+'''
+Collection of common surnames
+'''
+
+SURNAMES = '''
 Aaron
 Abbey
 Abbott
@@ -1523,3 +1528,4 @@ York
 Young
 Younge
 Yoxall
+'''
