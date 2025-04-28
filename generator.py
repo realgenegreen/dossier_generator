@@ -72,7 +72,7 @@ else:
 
 def dossier():
     """
-
+    Returns JSON block of generated dossier
     """
     return json.dumps({
         'Name': f'{name} {surname()}',
