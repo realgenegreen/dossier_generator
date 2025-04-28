@@ -1,6 +1,6 @@
-'''
+"""
 Collection of common surnames
-'''
+"""
 
 SURNAMES = '''
 Aaron

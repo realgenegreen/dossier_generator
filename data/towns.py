@@ -1,6 +1,6 @@
-'''
+"""
 Collection of words for towns namings
-'''
+"""
 
 TOWN_DBLW = '''
 Hill
@@ -22,6 +22,9 @@ Camp
 Village
 Springs 
 Valley
+Creek
+Kings
+Ways
 '''
 
 TOWN_PFIX = '''
@@ -48,7 +51,14 @@ mont
 berry
 bury
 grove
+onia
+hurst
+dale
+head
+fork
 '''
+# court
+# gate
 
 TOWN_RTWD = '''
 Bright 
@@ -108,4 +118,9 @@ Ridge
 Meadow
 Cliff
 Horse
+Lone
+Rolling
+Buck
+Smith
+Crescent
 '''

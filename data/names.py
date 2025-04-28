@@ -1,6 +1,6 @@
-'''
+"""
 Collection of common people names
-'''
+"""
 
 M_NAMES = '''
 James

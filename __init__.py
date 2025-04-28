@@ -1,4 +1,4 @@
-'''INIT'''
+"""INIT"""
 import random
 
 def _coin():

@@ -1,6 +1,6 @@
-'''
+"""
 Collection of common professions
-'''
+"""
 
 M_PROFESSIONS = '''
 Accountant

@@ -1,12 +1,12 @@
-'''
+"""
 This is a simple program that generates dossier of non-existent peoples.
 This file is main part of it.
 
 CREATED BY GENE GREEN (c)
 2023
 realgenegreen@gmail.com
-'''
-
+"""
+import json
 import random
 from credentials import f_name, m_name, surname, m_prof, f_prof, date, pid, driver_license
 from locations import towns, address, education
@@ -67,16 +67,36 @@ if _coin() == 0:
 else:
     town = birthtown
 
+# date = datetime.strptime(date(), "%d %b %Y").strftime("%Y-%m-%d")
+
+
+def dossier():
+    """
+
+    """
+    return json.dumps({
+        'Name': f'{name} {surname()}',
+        'Gender': f'{gen}',
+        'ID': pid(),
+        'Date of Birth': date(),
+        'Birthplace': f'{birthtown}',
+        'Location Address': f'{address(town)}',
+        'Driver License': f'{driver}',
+        'Occupation': f'{occu}',
+        'Education': f'{edu}',
+        'Social Rating': socr,
+        'Social Rating Type': f'{rcom}'
+    })
+
 #==============PRINT BLOCK================
-print('\n'+
-    'Name:',name,surname(),'\n'+
-    'Gender:',gen,'\n'+
-    'ID:',pid(),'\n'+
-    'Date of Birth:',date(),'\n'+
-    'Birthplace:',birthtown,'\n'+
-    'Location Address:',address(town),'\n'+
-    'Driver License:',driver,'\n'+
-    'Occupation:',occu,'\n'+
-    'Education:',edu,'\n'+
-    'Social Rating:',socr,rcom,'\n'
-    )
+# print('\n'+
+#     'Name:',name,surname(),'\n'+
+#     'Gender:',gen,'\n'+
+#     'ID:',pid(),'\n'+
+#     'Date of Birth:',date(),'\n'+
+#     'Birthplace:',birthtown,'\n'+
+#     'Location Address:',address(town),'\n'+
+#     'Driver License:',driver,'\n'+
+#     'Occupation:',occu,'\n'+
+#     'Education:',edu,'\n'+
+#     'Social Rating:',socr,rcom,'\n')

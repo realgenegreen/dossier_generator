@@ -1,4 +1,4 @@
-'''INIT'''
+"""INIT"""
 from .names import *
 from .surnames import *
 from .professions import *

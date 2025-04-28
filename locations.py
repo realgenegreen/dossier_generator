@@ -1,11 +1,11 @@
-'''
+"""
 This module is a collection of methods 
 for generating non-existent geographic locations.
 
 CREATED BY GENE GREEN (c)
 2023
 realgenegreen@gmail.com
-'''
+"""
 
 import random
 from data import SURNAMES, TOWN_RTWD, TOWN_DBLW, TOWN_PFIX, ST_RTWDS
@@ -17,7 +17,7 @@ def _root():
     return random.choice(TOWN_RTWD.split())
 
 def towns():
-    '''Town name generator'''
+    """Town name generator"""
     if _coin() == 0:
         pfix = random.choice(TOWN_PFIX.split())
         return _root()+pfix
@@ -26,7 +26,7 @@ def towns():
         return _root()+' '+pfix
 
 def street():
-    '''Street name generator'''
+    """Street name generator"""
     def _st_num():
         num = str(random.randrange(1, 200, 1))
         ind = num[-1]
@@ -56,13 +56,13 @@ def street():
     return st_name+' '+st_type
 
 def address(twn):
-    '''Address string generator'''
+    """Address string generator"""
     num_1 = random.randrange(1,700,1)
     num_2 = random.randrange(10000,99999,1)
     return f'{num_1} {street()}, {twn} {num_2}'
 
 def education():
-    '''Education info generator'''
+    """Education info generator"""
     if _coin() == 0:
         mid_univ = ''
     else:

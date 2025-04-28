@@ -1,6 +1,6 @@
-'''
+"""
 Collection of words for street naming
-'''
+"""
 
 ST_RTWDS = '''
 Butcher
